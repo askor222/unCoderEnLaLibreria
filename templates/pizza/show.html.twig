@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pizza{% endblock %}
+
+{% block body %}
+    <h1>Pizza</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pizza.id }}</td>
+            </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{ pizza.precio }}</td>
+            </tr>
+            <tr>
+                <th>Sabor</th>
+                <td>{{ pizza.sabor }}</td>
+            </tr>
+            <tr>
+                <th>Peso</th>
+                <td>{{ pizza.Peso }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pizza_index') }}">back to list</a>
+
+    <a href="{{ path('app_pizza_edit', {'id': pizza.id}) }}">edit</a>
+
+    {{ include('pizza/_delete_form.html.twig') }}
+{% endblock %}
