@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Pizza;
+use App\Entity\Personas;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Pizza>
+ * @extends ServiceEntityRepository<Personas>
  *
- * @method Pizza|null find($id, $lockMode = null, $lockVersion = null)
- * @method Pizza|null findOneBy(array $criteria, array $orderBy = null)
- * @method Pizza[]    findAll()
- * @method Pizza[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Personas|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Personas|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Personas[]    findAll()
+ * @method Personas[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PizzaRepository extends ServiceEntityRepository
+class PersonasRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Pizza::class);
+        parent::__construct($registry, Personas::class);
     }
 
-    public function save(Pizza $entity, bool $flush = false): void
+    public function save(Personas $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class PizzaRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Pizza $entity, bool $flush = false): void
+    public function remove(Personas $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class PizzaRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Pizza[] Returns an array of Pizza objects
+//     * @return Personas[] Returns an array of Personas objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class PizzaRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Pizza
+//    public function findOneBySomeField($value): ?Personas
 //    {
 //        return $this->createQueryBuilder('p')
 //            ->andWhere('p.exampleField = :val')
